@@ -1,7 +1,5 @@
 import java.util.ArrayDeque;
 
-/* YOU ARE ALLOWED (AND EXPECTED) TO USE THE JAVA ARRAYDEQUE CLASS */
-
 public class CookieMonster {
 
 	private int [][] cookieGrid, memoGrid;
