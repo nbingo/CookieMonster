@@ -13,7 +13,7 @@ public class CookieMonster {
 		this.numRows    = cookieGrid.length;
 		this.numCols    = cookieGrid[0].length;
 		this.memoGrid   = new int[numRows][numCols];
-		for (int r = 0; r < numRows; r++)
+		for (int r = 0; r < numRows; r++)      // Initializing memoGrid to all -1's for recursiveOptimalPathMemoized
 			for (int c = 0; c < numCols; c++)
 				memoGrid[r][c] = -1;
 	}
@@ -56,8 +56,7 @@ public class CookieMonster {
 	
 	private int recursiveOptimalPathMemoized(int row, int col, int depth)
 	{
-		if (depth > this.maxCallStackDepth)
-			this.maxCallStackDepth = depth;
+		this.maxCallStackDepth = Math.max(this.maxCallStackDepth, depth);
 		if (!goodPoint(row, col))
         	return 0;
 		return getPointTotal(row, col, depth);
