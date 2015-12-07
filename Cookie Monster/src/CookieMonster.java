@@ -58,9 +58,7 @@ public class CookieMonster {
 	private int recursiveOptimalPathMemoized(int row, int col, int depth)
 	{
 		this.maxCallStackDepth = Math.max(this.maxCallStackDepth, depth);
-		if (!goodPoint(row, col))
-        	return 0;
-		return getPointTotal(row, col, depth);
+		return !goodPoint(row, col) ? 0 : getPointTotal(row, col, depth);
 	}
 	
 	private int getPointTotal(int row, int col, int depth)
