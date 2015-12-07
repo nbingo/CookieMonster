@@ -14,8 +14,8 @@ public class CookieMonsterTester {
  */
 	public static void main(String[] args)
 	{
-		String[] fileNames = {"cookies3.txt", "cookies2.txt", "cookies.txt"};
-		int numFilesToTest = 3;
+		String[] fileNames = {"cookies4.txt", "cookies3.txt", "cookies2.txt", "cookies.txt"};
+		int numFilesToTest = 4;
 
 		if (args.length >= 1)
 		{
