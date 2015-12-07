@@ -7,6 +7,7 @@ public class CookieMonster {
 	private int numCols;
 	private int optimalPath = -1;
 	private int maxCallStackDepth = 0; // Used only in recursiveOptimalPath
+	private int numPaths;
 
 	public CookieMonster(int [][] cookieGrid) {
 		this.cookieGrid = cookieGrid;
@@ -112,6 +113,7 @@ public class CookieMonster {
 		int bestPath = -1;
 		PathMarker current = new PathMarker(0, 0, cookieGrid[0][0]);
 		stack.addFirst(current);
+		numPaths=0;
 		while(!stack.isEmpty())
 		{
 			boolean right = goodPoint(current.row,   current.col+1);
@@ -128,9 +130,15 @@ public class CookieMonster {
 			{
 				bestPath = Math.max(current.total, bestPath);
 				current = stack.pop();
+				numPaths++;
 			}
 			maxStackSize = Math.max(maxStackSize, stack.size());
 		}
 		return maxStackSize;
+	}
+	
+	public int getNumPaths()
+	{
+		return numPaths;
 	}
 }
