@@ -24,7 +24,7 @@ public class CookieMonsterTester {
 		else
 		{
 			Scanner kboard = new Scanner(System.in);
-			System.out.print("Enter the cookies file name or press ENTER for 3 default test cases: ");
+			System.out.print("Enter the cookies file name or press ENTER for 4 default test cases: ");
 			String filename = kboard.nextLine();
 			if (!filename.equals(""))
 			{
