@@ -1,4 +1,4 @@
-public class UnsortedDLLPQ<E> implements MyPriorityQueue<E> {
+public class UnsortedDLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 	
 	private ListNode2 queueHead;
 	private int objectCount;

@@ -1,5 +1,5 @@
 
-public class SortedSLLPQ<E> implements MyPriorityQueue<E> 
+public class SortedSLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E>
 {
 
 	private ListNode queueHead;

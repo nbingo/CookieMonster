@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ArrayListPQ<E> implements MyPriorityQueue<E> {
+public class ArrayListPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 
 	private ArrayList<E> queue;
 	
