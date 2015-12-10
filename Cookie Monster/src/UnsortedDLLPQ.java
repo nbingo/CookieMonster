@@ -12,11 +12,7 @@ public class UnsortedDLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E
 	public void add(E obj)
 	{
 		if (objectCount == 0)
-		{
 			queueHead = new ListNode2(obj);
-			queueHead.setNext(queueHead);
-			queueHead.setPrevious(queueHead);
-		}
 		else
 			queueHead = new ListNode2(obj, queueHead.getPrevious(), queueHead);
 		objectCount++;
