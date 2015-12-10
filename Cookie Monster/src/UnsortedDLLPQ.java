@@ -14,7 +14,10 @@ public class UnsortedDLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E
 		if (objectCount == 0)
 			queueHead = new ListNode2(obj);
 		else
-			queueHead = new ListNode2(obj, queueHead.getPrevious(), queueHead);
+		{
+			queueHead = new ListNode2(obj, null, queueHead);
+			queueHead.getNext().setPrevious(queueHead);
+		}
 		objectCount++;
 	}
 	
@@ -22,11 +25,13 @@ public class UnsortedDLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E
 	public E removeMin()
 	{
 		ListNode2 least = queueHead;
-		for (ListNode2 node = queueHead.getNext(); node != queueHead; node = node.getNext())
+		for (ListNode2 node = queueHead.getNext(); node != null; node = node.getNext())
 			if (((E)least.getValue()).compareTo((E)node.getValue())>0)
 				least = node;
-		least.getPrevious().setNext(least.getNext());
-		least.getNext().setPrevious(least.getPrevious());
+		if (least.getPrevious()!=null)
+			least.getPrevious().setNext(least.getNext());
+		if (least.getNext()!=null)
+			least.getNext().setPrevious(least.getPrevious());
 		objectCount--;
 		return (E)least.getValue();
 	}
