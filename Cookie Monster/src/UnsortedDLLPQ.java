@@ -60,10 +60,7 @@ public class UnsortedDLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E
 	{
 		StringBuffer stringbuf = new StringBuffer ("[ ");
 		for (ListNode2 node = queueHead; node != null; node = node.getNext()) 
-		{
 			stringbuf.append(node.getValue()+" ");
-
-		}
 		stringbuf.append("]");
 		return stringbuf.toString();
 	}
