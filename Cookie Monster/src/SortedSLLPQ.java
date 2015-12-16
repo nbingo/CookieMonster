@@ -62,9 +62,11 @@ public class SortedSLLPQ<E extends Comparable<E>> implements MyPriorityQueue<E>
 		return objectCount == 0;
 	}
 
-	public int size()
+	public int size() throws IllegalStateException
 	{
-		return objectCount;
+		if (objectCount>=0)
+			return objectCount;
+		throw new IllegalStateException();
 	}
 
 	public String toString()
