@@ -1,9 +1,15 @@
-
+/**
+ * @author Nomi
+ * @version 12.18.15
+ * @since 12.18.15
+ * @param <E>
+ */
 public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 
 	private E[] heap;
 	private int objectCount;
 	
+	@SuppressWarnings("unchecked")
 	public HeapPQ()
     {
         this.heap = (E[])new Comparable[3];
@@ -31,13 +37,13 @@ public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 	// Returns true if the priority queue is empty
 	public boolean isEmpty()
 	{
-		
+		return objectCount == 0;
 	}
 	
 	//Returns the number of elements in the priority queue
 	public int size()
 	{
-		
+		return objectCount;
 	}
 	
 	public String toString()
@@ -96,13 +102,13 @@ public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 	}
 
 	// Bubbles the element at index i upwards until the heap properties hold again.
-	private void bubbleUp(int i)
+	private void siftUp(int i)
 	{
 		
 	}
 	
 	// Bubbles the element at index i downwards until the heap properties hold again.
-	private void bubbleDown(int i)
+	private void siftDown(int i)
 	{
 		
 	}
