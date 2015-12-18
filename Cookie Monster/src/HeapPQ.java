@@ -80,34 +80,44 @@ public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 	}
 	
 	//Doubles the size of the heap array
+	@SuppressWarnings("unchecked")
 	private void increaseCapacity()
 	{
-		
+		E[] doubled = (E[])new Comparable[heap.length*2];
+		for (int i = 0; i < heap.length; i++)
+			doubled[i] = heap[i];
+		heap = doubled;
 	}
 
 	//Returns the index of the "parent" of index i
 	private int parent(int i)
 	{
-		
+		if (i%2 == 0) //even
+			return (i-1)/2;
+		return i/2;
 	}
 	//Returns the *smaller child* of index i
 	private int smallerChild(int i)
 	{
-		
+		if (heap[i*2].compareTo(heap[i*2+1])<0)
+			return i*2;
+		return i*2+1;
 	}
 	//Swaps the contents of indices i and j
 	private void swap(int i, int j)
 	{
-		
+		E temp  = heap[j];
+		heap[j] = heap[i];
+		heap[i] = temp;
 	}
 
-	// Bubbles the element at index i upwards until the heap properties hold again.
+	// Sifts the element at index i upwards until the heap properties hold again.
 	private void siftUp(int i)
 	{
 		
 	}
 	
-	// Bubbles the element at index i downwards until the heap properties hold again.
+	// Sifts the element at index i downwards until the heap properties hold again.
 	private void siftDown(int i)
 	{
 		
