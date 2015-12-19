@@ -27,7 +27,7 @@ public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 		}
 		else
 		{
-			if (heap.length - 2< objectCount)
+			if (heap.length - 2 < objectCount)
 				increaseCapacity();
 			heap[objectCount+1] = obj;
 			siftUp(objectCount+1);

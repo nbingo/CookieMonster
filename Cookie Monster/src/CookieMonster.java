@@ -137,6 +137,38 @@ public class CookieMonster {
 		return maxStackSize;
 	}
 	
+	public int maxPQSize()
+	{
+		HeapPQ<PathMarker> pq = new HeapPQ<PathMarker>();
+		int maxPQSize = 0;
+		int bestPath = -1;
+		PathMarker current = new PathMarker(0, 0, cookieGrid[0][0]);
+		pq.add(current);
+		
+		while (!pq.isEmpty())
+		{
+			boolean right = goodPoint(current.row,   current.col+1);
+			boolean down  = goodPoint(current.row+1, current.col);
+			
+			if (right ^ down) //can only go up either right or down
+				current = right ? new PathMarker(current.row, current.col+1, current.total+cookieGrid[current.row][current.col+1]) : new PathMarker(current.row+1, current.col, current.total+cookieGrid[current.row+1][current.col]);
+			else if (right && down) //can go both right and down
+			{
+				current =  new PathMarker(current.row,   current.col+1, current.total+cookieGrid[current.row  ][current.col+1]);
+				pq.add(new PathMarker(current.row+1, current.col,   current.total+cookieGrid[current.row+1][current.col  ]));
+			}
+			else //have reached the bottom right
+			{
+				bestPath = Math.max(current.total, bestPath);
+				current = pq.removeMin();
+				numPaths++;
+			}
+			maxPQSize = Math.max(maxPQSize, pq.size());
+		}
+		return maxPQSize;
+	}
+
+	
 	public int getNumPaths()
 	{
 		return numPaths;

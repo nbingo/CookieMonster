@@ -152,28 +152,28 @@ public class PQTester {
             System.out.print(i + " ");
         }
         System.out.println("");
-//
-//        myQ4.add(4);
-//        myQ4.add(6);
-//        myQ4.add(6);
-//        myQ4.add(8);
-//        myQ4.add(30);
-//        myQ4.add(122);
-//        myQ4.add(1);
-//        myQ4.add(2);
-//        myQ4.add(13);
-//        myQ4.add(22);
-//        myQ4.add(13);
-//        myQ4.add(26);
-//
-//        System.out.println("queue:   " + myQ4);
-//
-//        System.out.print("Removing: ");
-//        while (!myQ4.isEmpty()) {
-//            Integer i = myQ4.removeMin();
-//            System.out.print(i + " ");
-//        }
-//        System.out.println("");
+
+        myQ4.add(4);
+        myQ4.add(6);
+        myQ4.add(6);
+        myQ4.add(8);
+        myQ4.add(30);
+        myQ4.add(122);
+        myQ4.add(1);
+        myQ4.add(2);
+        myQ4.add(13);
+        myQ4.add(22);
+        myQ4.add(13);
+        myQ4.add(26);
+
+        System.out.println("queue:   " + myQ4);
+
+        System.out.print("Removing: ");
+        while (!myQ4.isEmpty()) {
+            Integer i = myQ4.removeMin();
+            System.out.print(i + " ");
+        }
+        System.out.println("");
     }
 
 }
