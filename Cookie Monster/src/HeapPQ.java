@@ -145,13 +145,10 @@ public class HeapPQ<E extends Comparable<E>> implements MyPriorityQueue<E> {
 	private void siftDown(int i)
 	{
 		int siftedTo = 0;
-		if (i*2 > objectCount ^ i*2+1 > objectCount) //only one child, which is i*2
+		if (i*2 == objectCount && heap[i].compareTo(heap[i*2])>0) //only one child, which is i*2
 		{
-			if (heap[i].compareTo(heap[i*2])>0)
-			{
-				siftedTo = i*2;
-				swap(i,i*2);
-			}
+			siftedTo = i*2;
+			swap(i,i*2);
 		}
 		else if (i*2 < objectCount)					// has two children
 		{
