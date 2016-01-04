@@ -17,4 +17,8 @@ public class PathMarker implements Comparable<PathMarker> {
     public int compareTo(PathMarker other) {
     	return other.total - this.total;
     }
+    public String toString()
+    {
+    	return ""+total;
+    }
 }
